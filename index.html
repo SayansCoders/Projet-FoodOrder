@@ -6,10 +6,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
       .overlay {
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(14, 14, 22, 0.86);
       }
-      h1 {
-        font-family: "Sauce Tomato", sans-serif;
+      #hero_text {
         background: linear-gradient(
           90deg,
           var(--gradient-start),
@@ -21,6 +20,9 @@
         -webkit-text-fill-color: transparent;
         text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
       }
+      h1 {
+        font-family: "Sauce Tomato", sans-serif;
+      }
 
       :root {
         --gradient-start: #a9291d;
@@ -29,21 +31,12 @@
     </style>
   </head>
   <body>
-    <!-- <main class="relative w-full min-h-screen" style="background-image: url(/assets/home_img/background.jpg); background-size: cover; ">
-        
-        <div class="overlay absolute inset-0"></div>
-        
-        <section class="relative z-10 p-8">
-            <h1 class="text-white text-4xl font-bold">Your Content Here</h1>
-            <p class="text-white mt-4">Background image with dark overlay</p>
-        </section>
-
-    </main> -->
-
     <main>
-
       <section class="bg-[#101018] cover min-h-screen p-6 relative">
-        <h1 class="text-center text-[9rem]/50 tracking-[.20em] font-black">
+        <h1
+          id="hero_text"
+          class="text-center text-[9rem]/50 tracking-[.20em] font-black"
+        >
           SMOKY <br />
           <span class="text-[10rem]">CHEEZY</span> <br />
           <span class="text-[12rem]">BURGER</span>
@@ -51,15 +44,49 @@
         <img
           src="./assets/images/home_img/carousel1.png"
           alt="Burger"
-          class="absolute  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-auto drop-shadow-[0_0_25px_rgba(0,0,0,0.8)]"/>
-          <div class="absolute top-[2%] right-[4%] rotate-[-19deg]">
-           <img src="./assets/images/home_img/carousel.png" alt="">
-      </div>
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-auto drop-shadow-[0_0_25px_rgba(0,0,0,0.8)]"
+        />
+        <div class="absolute top-[2%] right-[4%] rotate-[-19deg]">
+          <img src="./assets/images/home_img/carousel.png" alt="" />
+        </div>
       </section>
 
-      <section class="bg-[url(./assets/images/home_img/background.jpg)] cover min-h-screen relative">
-        <div class="bg-black overlay absolute inset-0"></div>
+      <section
+        class="bg-[url(./assets/images/home_img/background.jpg)] cover min-h-screen relative">
+        <div class="bg-black overlay absolute inset-0 p-12">
+          <h1 class="text-white text-4xl font-bold p-4">
+            Todays <span class="text-[#860000]">Menu</span>
+          </h1>
 
+          <!-- <div class="bg-gray-900 p-8"> -->
+            <div class="bg-gray-800 rounded-2xl p-4 max-w-md flex items-center gap-6">
+        <div class="flex-1">
+            <h2 class="text-white text-2xl font-bold mb-4">The classics for 3</h2>
+            
+            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks
+            </p>
+            
+            <div class="bg-red-600 text-white font-bold px-4 py-2 rounded-lg inline-block">
+                MAD 23.10
+            </div>
+        </div>
+        
+        <div class="relative flex-shrink-0">
+            <div class="w-48 h-48 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-2xl overflow-hidden">
+                <img src="./assets/images/" alt="">
+            </div>
+            
+            <button class="absolute bottom-0 right-0 bg-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 6v12m6-6H6"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+          <!-- </div> -->
+
+        </div>
       </section>
     </main>
   </body>
