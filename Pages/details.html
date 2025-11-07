@@ -17,7 +17,7 @@
 
     <!--all part details-->
 
-    <div class="all-part-details bg-[#121212] mx-14 h-screen">
+    <div class="all-part-details h-fit pb-14 sm:bg-[#121212] sm:mx-14 mt-9">
       <br>
       <h1 class="font-bold text-7xl text-white text-center">Dish <span class="text-[#91011A]">Details</span></h1>
       <br>
@@ -40,7 +40,7 @@
 
           <!-- image details test -->
 
-          <div class="image-details">
+          <div class="image-details w-[250px]">
             <img src="/assets/images/details-image/pizza.png" alt="pizza">
           </div>
         </div>
@@ -103,15 +103,18 @@
 
           <!-- btn total price-->
 
-          <div class="total-price bg-[#860000] flex gap-2 h-[50px] w-[150px] mt-[2.5rem] ml-[50px] justify-around items-center rounded-[8px] text-[20px]">
-            <h1><span id="total-price">50</span></h1>
-            <h1 class="border-s-2 px-2">MAD</h1>
+          <div class="flex items-center gap-[36rem] mt-7 ml-7">
+            <div class="total-price bg-[#860000] flex gap-2 h-[50px] w-[150px] justify-around items-center rounded-[8px] text-[20px]">
+              <h1><span id="total-price">50</span></h1>
+              <h1 class="border-s-2 px-2">MAD</h1>
+            </div>
+  
+            <div class="btn-add-to-card flex bg-[#FC8A06] w-[250px] h-[70px] p-2 justify-around items-center rounded-[10px] cursor-pointer hover:bg-[#BC6F05]">
+            <h1 class="text-[20px] font-bold">ADD TO CARD</h1>
+            <img src="/assets/images/details-image/shopping-cart.png" alt="shopping-card">
+            </div>
           </div>
 
-          <div class="btn-add-to-card flex bg-[#FC8A06] w-[250px] h-[70px] p-2 justify-around items-center rounded-[10px] mt-[2.5rem] ml-96 cursor-pointer hover:bg-[#BC6F05]">
-          <h1 class="text-[20px] font-bold">ADD TO CARD</h1>
-          <img src="/assets/images/details-image/shopping-cart.png" alt="shopping-card">
-        </div>
         </div>
 
       </div>
@@ -163,13 +166,17 @@
     minusPriceValue.addEventListener('click', () => {
       const minuS = document.querySelector('#number-total-food');
       let valueMinus = parseInt(minuS.textContent);
-      valueMinus--;
-      minuS.textContent = valueMinus;
+      if(valueMinus > 1){
+        valueMinus--;
+        minuS.textContent = valueMinus;
+      }
 
       const totalPrice = document.querySelector('#total-price');
       let valuePrice = parseInt(totalPrice.textContent);
-      valuePrice-=50;
-      totalPrice.textContent = valuePrice;
+      if(valuePrice > 50){
+        valuePrice-=50;
+        totalPrice.textContent = valuePrice;
+      }
     });
   </script>
 </body>
