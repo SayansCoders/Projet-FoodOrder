@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Card Paiment</title>
+</head>
+<body>
+    <div id="CardPaiment" class="grid grid-cols-9 gap-4 items-center justify-between bg-[#91011A] w-full h-40">
+        <div class="col-span-2 flex justify-center items-center">
+            <img src="../assets/images/imagesCardPaiment/imgCardPaiment.png" alt="images pizza" class="rounded-full" id="imgCardPaiment">
+        </div>
+        <div class="col-span-5  flex flex-col text-white">
+            <div class="flex justify-between w-40 mb-4" >
+                <h2 class="text-start max-w-96 lg:text-2xl lg:max-w-[400px]">Margareta</h2>
+                <div class="bg-[#D02A2A] rounded-md">
+                    <p class="font-semibold text-start max-w-96 lg:text-2xl lg:max-w-[400px]"> MAD <span id="prix-initial" class="font-semibold lg:text-1xl lg:max-w-40"></span>23.90</span></p>
+                </div>
+            </div>
+            <p id="description" class="text-start max-w-96 lg:text-2xl lg:max-w-[400px]">1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks</p>
+        </div>
+        <div class="col-span-2 ">
+            <i id="iconPlus"></i>
+            <div>
+                <span id="quantite"></span>
+            </div>
+            <i id="iconMoins"></i>
+        </div>
+    </div>
+    
+</body>
+</html>
