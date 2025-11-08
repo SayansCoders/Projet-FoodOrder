@@ -3,18 +3,21 @@
 
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tailwind Test</title>
   <link href="../dist/output.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/compenents.css">
+  <link rel="stylesheet" href="../css/font-color.css">
 </head>
 
-<body class="text-white flex flex-col items-center justify-center bg-gray-900">
-  <section class="shadow-lg bg-black  w-11/12 mt-12" id="section-commande">
+<body class="bg-principal">
+  <section class="shadow-lg bg-black text-white  w-11/12 mt-12 m-auto max-h-max"   id="section-commande">
     
     <!-- IMAGE HEADER -->
     <div id="section-header" class="relative">
       <img src="../assets/images/home_img/background.jpg" alt="image pizza" class="w-full h-[600px] object-cover hover:h-[750px] transition-all duration-[2000ms] ease-in-out">
-      <h2 class="absolute top-[250px]  w-full text-center font-bold text-7xl uppercase">Order from <br><span class="uppercase text-black">food</span> Order</h2>
+      <h2 class="font-sauce absolute top-[250px]  w-full text-center font-bold text-7xl uppercase">Order from <br><span class="uppercase text-black">food</span> Order</h2>
       
       <!-- BOUTON DE RETOUR -->
       <div class="absolute text-4xl top-12 left-12 flex justify-center align-middle bg-red-900 px-3 py-1 font-bold  rounded-full text-white hover:bg-red-700 ">
@@ -27,7 +30,7 @@
         <p>06/11/2025</p>
         <p>12:00</p>
       </div>
-      <h2 class="text-white text-6xl font-bold w-full text-center"><span class="text-red-800 text-6xl">Commande</span> details</h2>
+      <h2 class="text-white font-sauce text-6xl font-bold w-full text-center"><span class="text-red-800 text-6xl TX-red">Commande</span> details</h2>
       <div id="cards-panier" class="mx-20 my-10 bg-white h-56 flex flex-col ">
         
 
@@ -47,6 +50,8 @@
     </div>
 
   </section>
+  <section id="map"></section>
+  <section id="brands"></section>
   <footer id="footer"></footer>
   <script src="../js/paiment.js"></script>
 </body>

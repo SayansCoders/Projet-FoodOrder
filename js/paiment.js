@@ -7,3 +7,5 @@ function includHTML(id,file){
     .catch(err => console.log("erreur include file ", err))
 }
 includHTML("footer" , "../compenents/footer.html")
+includHTML("brands" , "../compenents/brands.html")
+includHTML("map" , "../compenents/cardGoogleMap.html")
