@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'MyFont';
+
+  src: url('/assets/font/Sauce Tomato.otf') format('opentype');
+
+  font-weight: normal;
+
+  font-style: normal;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -552,4 +562,8 @@ video {
 
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 2a2f803c6a44de1b8a87a61d354debaac10182a0
