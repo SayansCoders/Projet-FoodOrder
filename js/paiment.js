@@ -1,6 +1,10 @@
 import { Footer } from '../js/fetchComponents.js';
+import { Brands } from '../js/fetchComponents.js';
+import { Map } from '../js/fetchComponents.js';
 
 document.getElementById("footer").innerHTML = Footer();
+document.getElementById("map").innerHTML = Map();
+document.getElementById("brands").innerHTML = Brands();
 
 const btnLivraison = document.getElementById('livraison');
 const btnNow = document.getElementById('now');
