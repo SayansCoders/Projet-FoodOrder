@@ -56,8 +56,10 @@ export function Navbar(){
     <div id="panier"
       class="fixed top-0 right-0 h-full w-[300px] bg-[#181826]/70 backdrop-blur-lg border-l border-white/20 transform translate-x-full transition-transform duration-500 ease-in-out">
 
-    </div>
-  </div>`;
+    </div>J
+  </div>
+  <div class="h-100"></div>
+  `;
 }
 export function Panier(){
     return ` <div class="w-full max-w-sm bg-[#860000] rounded-lg shadow-2xl h-full relative">
