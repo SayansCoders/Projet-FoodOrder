@@ -685,12 +685,22 @@ export function CardPaiment(){
 
 
 
+if(document.getElementById("navbar")!== null){
+    document.getElementById("navbar").innerHTML = Navbar();
+}
+if(document.getElementById("panier")!== null){
+    document.getElementById("panier").innerHTML = Panier();
+}
+if(document.getElementById("footer")!== null){
+    document.getElementById("footer").innerHTML = Footer();
+}
+if(document.getElementById("map")!== null){
+    document.getElementById("map").innerHTML = Map();
+}
+if(document.getElementById("brands")!== null){
+    document.getElementById("brands").innerHTML = Brands();
+}
 
-document.getElementById("navbar").innerHTML = Navbar();
-document.getElementById("panier").innerHTML = Panier();
-document.getElementById("footer").innerHTML = Footer();
-document.getElementById("map").innerHTML = Map();
-document.getElementById("brands").innerHTML = Brands();
 
 //code js Navbar
 document.addEventListener("DOMContentLoaded", () => {
