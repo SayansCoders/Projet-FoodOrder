@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <CHANGE> Added GSAP library for animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
       body {
         background-image: url("./assets/images/home_img/background.jpg");
@@ -69,11 +71,14 @@
           <span class="text-[3.5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem]">CHEEZY</span> <br />
           <span class="text-[4rem] sm:text-[7rem] md:text-[9rem] lg:text-[12rem]">BURGER</span>
         </h1>
-        <img
-          src="./assets/images/home_img/carousel1.png"
-          alt="Burger"
-          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[20rem] sm:w-[25rem] md:w-[30rem] lg:w-[40rem] h-auto drop-shadow-[0_0_25px_rgba(0,0,0,0.8)]"
-        />
+        <div id="burger-carousel" class="absolute left-[58%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] sm:w-[25rem] md:w-[20rem] lg:w-[40rem] h-auto">
+          <img
+            id="burger-image"
+            src="./assets/images/home_img/carousel1.png"
+            alt="Burger"
+            class="w-[70%] h-auto drop-shadow-[0_0_25px_rgba(0,0,0,0.8)]"
+          />
+        </div>
         <div class="absolute top-[2%] right-[4%] rotate-[-19deg] w-16 sm:w-24 md:w-32 lg:w-auto">
           <img src="./assets/images/home_img/carousel.png" alt="" class="w-full" />
         </div>
@@ -141,12 +146,12 @@
  From juicy burgers and loaded fries to Moroccan-inspired twists,
               every bite is made with fresh ingredients, a lot of passion, and
               that local touch that makes it special. Born from a love for good
-              food and chill moments, our place isn’t just about eating — it’s
+              food and chill moments, our place isn't just about eating — it's
               about living the full experience. From juicy burgers and loaded
               fries to Moroccan-inspired twists, every bite is made with fresh
               ingredients, a lot of passion, and that local touch that makes it
               special. Born from a love for good food and chill moments, our
-              place isn’t just about eating — it’s about living the full
+              place isn't just about eating — it's about living the full
               experience. From juicy burgers and loaded fries to
               Moroccan-inspired twists, every bite is made with fresh
               ingredients, a lot of passion, and that local touch that makes it
@@ -277,7 +282,7 @@
           </div>
         </div>
       </section>
-      <section id="map"></section>
+      
       
     </main>
 
@@ -286,47 +291,6 @@
     </footer>
     <script type="module" src="./js/fetchComponents.js"></script>
     <script src="/js/index.js"></script>
-    <!-- <script>
-      fetch('/data/data.json')
-      .then(response => response.json())
-      .then(data =>{
-        const card_container = document.getElementById('cards');
-        console.log(data);
-        data.forEach(e => {
-           const card = document.createElement('div');
-           card.innerHTML = `
-           <div class="bg-[#222222] rounded-2xl p-4 sm:p-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-              <div class="flex-1 text-center sm:text-left">
-                <h2 class="text-white text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
-                  ${e.name}
-                </h2>
-                <p class="text-gray-300 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
-                  ${e.description}
-                  </p>
-                <div class="bg-red-600 text-white font-bold px-4 py-2 rounded-lg inline-block text-sm sm:text-base">
-                 ${e.price}
-                </div>
-              </div>
-              <div class="relative flex-shrink-0">
-                <div class="w-40 h-40 sm:w-48 sm:h-48 bg-gradient-to-br rounded-2xl overflow-hidden">
-                  ${e.image}
-                  </div>
-                <button class="absolute bottom-0 right-0 bg-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-                  <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 6v12m6-6H6"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-           `;
-           card_container.appendChild(card);
-
-        });
-      })
-      .catch(err => console.error('hna kayn mochkile:' , err));
-      
-
-    
-    </script> -->
+   
   </body>
 </html>

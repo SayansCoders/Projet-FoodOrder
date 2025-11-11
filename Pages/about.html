@@ -224,7 +224,8 @@
             </h2>
           </div>
 
-          <div class="flex flex-row gap-8 justify-items-center">
+          <!-- Replaced flex layout with responsive grid that wraps and centers items -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
             <div class="text-center">
               <img
                 src="/assets/images/chefs/mouadchef.jpg"
@@ -245,7 +246,6 @@
               </h3>
             </div>
 
-          
             <div class="text-center">
               <img
                 src="/assets/images/chefs/abdessamadchef.jpg"
@@ -255,26 +255,24 @@
               <h3 class="text-white text-2xl font-bold">Chef Amine</h3>
             </div>
 
-            <div class="flex flex-row gap-11">
-              <div class="text-center md:col-start-2 lg:col-start-2">
-                <img
-                  src="/assets/images/chefs/mouhsinchef.jpg"
-                  alt="Chef Mouhssin"
-                  class="w-56 h-64 object-cover rounded-lg mb-4"
-                />
-                <h3 class="text-white text-2xl font-bold">
-                  Chef<br />Mouhssin
-                </h3>
-              </div>
+            <div class="text-center">
+              <img
+                src="/assets/images/chefs/mouhsinchef.jpg"
+                alt="Chef Mouhssin"
+                class="w-56 h-64 object-cover rounded-lg mb-4"
+              />
+              <h3 class="text-white text-2xl font-bold">
+                Chef<br />Mouhssin
+              </h3>
+            </div>
 
-              <div class="text-center">
-                <img
-                  src="/assets/images/chefs/unnamed.jpg"
-                  alt="Chef Chaimaa"
-                  class="w-56 h-64 object-cover rounded-lg mb-4"
-                />
-                <h3 class="text-white text-2xl font-bold">Chef<br />Chaimaa</h3>
-              </div>
+            <div class="text-center">
+              <img
+                src="/assets/images/chefs/unnamed.jpg"
+                alt="Chef Chaimaa"
+                class="w-56 h-64 object-cover rounded-lg mb-4"
+              />
+              <h3 class="text-white text-2xl font-bold">Chef<br />Chaimaa</h3>
             </div>
           </div>
         </div>
@@ -282,10 +280,7 @@
 
       <section
         class="relative min-h-screen bg-cover bg-center"
-        style="
-          background-image: url('/assets/images/about_img/mapsection.jpg');
-          background-attachment: fixed;
-        "
+        style="background-image: url('/assets/images/about_img/mapsection.jpg'); background-attachment: fixed;"
       >
         <div
           class="absolute inset-0 bg-black/50"
@@ -654,8 +649,7 @@
       <section id="map"></section>
       <section id="brands"></section>
     </main>
-    <footer  id="footer"></footer>
+    <footer id="footer"></footer>
     <script type="module" src="../js/fetchComponents.js"></script>
-
   </body>
 </html>

@@ -127,3 +127,30 @@ function addToCart(id) {
 document.addEventListener('DOMContentLoaded', () => {
   initializeCarousels();
 });
+
+const burgerImages = [
+        "./assets/images/home_img/carousel1.png",  
+        "./assets/images/home_img/carousel2.png",  
+        "./assets/images/home_img/carousel3.png"   
+      ];
+
+      let currentImageIndex = 0;
+      const burgerImage = document.getElementById("burger-image");
+
+      const tl = gsap.timeline({ repeat: -1 });
+
+      tl.to(burgerImage, {
+        opacity: 0,
+        scale: 0.95,
+        duration: 0.5,
+        onComplete: () => {
+          currentImageIndex = (currentImageIndex + 1) % burgerImages.length;
+          burgerImage.src = burgerImages[currentImageIndex];
+        }
+      })
+      .to(burgerImage, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.5
+      })
+      .to({}, { duration: 2 }); 
