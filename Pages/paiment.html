@@ -10,12 +10,29 @@
   <link rel="stylesheet" href="../css/compenents.css">
   <link rel="stylesheet" href="../css/font-color.css">
 </head>
+<style>
+   .input-error {
+      border: 2px solid #ff6b6b !important;
+      background-color: #fff5f5 !important;
+    }
+    .error-message {
+      color: #ff6b6b;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .input-valid {
+      border: 2px solid #51cf66 !important;
+    }
+    .font-sauce {
+      font-family: 'Courier New', monospace;
+    }
+</style>
 
 <body class="bg-principal">
   <section class="shadow-2xl bg-[#121212] text-white w-[95%] md:w-[90%] mt-6 md:mt-12 m-auto pb-6 md:pb-10"
     id="section-commande">
 
-    <!-- IMAGE HEADER -->
     <div  class="relative">
       <div id="section-header" class="relative">
       <img id="imagePaiment" src="../assets/images/home_img/background.jpg" class="w-full h-[280px] sm:h-[320px] md:h-[600px] object-cover hover:md:h-[750px] transition-all duration-[2000ms] ease-in-out" />
@@ -24,13 +41,11 @@
         Order from <br><span class="uppercase text-black">food</span> Order
       </h2>
     </div>
-    <!-- Bouton retour -->
     <div
       class="absolute top-4 md:top-12 left-4 md:left-12 flex justify-center items-center bg-[#91011A] rounded-full shadow-lg cursor-pointer w-12 h-12 md:w-16 md:h-16 hover:bg-[#b91329] transition-colors duration-300">
       <a href="../Pages/menu.html"><img src="../assets/images/icon/Vector left.png" alt="left arrow" class="w-5 h-5 md:w-7 md:h-7" /></a>
     </div>
 
-    <!-- BODY -->
     <div id="section-body" class="p-4 md:p-8">
       <div id="date-time" class="flex justify-between w-full text-xs sm:text-sm md:text-base">
         <p>06/11/2025</p>
@@ -41,11 +56,9 @@
         <span class="text-red-800 text-3xl sm:text-4xl md:text-6xl">Commande</span> details
       </h2>
 
-      <!-- Cards panier -->
       <div id="cards-panier"
         class="mx-2 md:mx-20 my-6 md:my-10 bg-white h-36 sm:h-44 md:h-56 flex gap-5 flex-col rounded-md"></div>
 
-      <!-- TOTAL -->
       <div id="total-to-pay"
         class="flex flex-col md:flex-row justify-between mx-2 md:mx-20 my-6 md:my-10 items-center md:items-end gap-3">
         <div
@@ -55,7 +68,6 @@
         <p class="text-xs sm:text-sm text-center md:text-left">Delivery & Tax will be calculated in the next step</p>
       </div>
 
-      <!-- BUTTONS -->
       <div
         class=" md:mx-20 flex  justify-center md:flex-row items-center md:justify-center w-full md:w-96 gap-4 float-right">
         <a href="#" class="underline font-semibold text-sm md:text-xl w-30 sm:w-44 ">Take me back</a>
@@ -68,56 +80,75 @@
     </div>
   </section>
 
-  <!-- FORMULAIRE -->
-  <section id="formInfo"
+ <section id="formInfo"
     class="shadow-2xl bg-[#91011A] text-white rounded-md flex flex-col justify-center items-center w-[95%] md:w-[90%] mt-8 md:mt-12 m-auto p-6 md:p-10">
 
     <h3 class="font-sauce pb-6 md:pb-14 text-xl sm:text-2xl md:text-4xl">FOODORDER+</h3>
     <p class="pb-3 text-sm md:text-base">Commander votre panier</p>
 
-    <input type="text"
-      class="bg-white rounded-md w-[95%] md:w-[90%] pl-7 text-[#555555] h-12 md:h-16 placeholder:text-[#555555] placeholder:pl-6 mb-5 md:mb-7 text-sm md:text-base"
-      placeholder="First Name" id="FirstName">
+    <form id="orderForm" class="w-full flex flex-col items-center">
 
-    <input type="text"
-      class="bg-white rounded-md w-[95%] md:w-[90%] h-12 md:h-16 pl-7 text-[#555555] placeholder:text-[#555555] placeholder:pl-6 mb-5 md:mb-7 text-sm md:text-base"
-      placeholder="Last Name" id="LastName">
+      <div class="w-full flex flex-col items-center">
+        <input type="text"
+          class="bg-white rounded-md w-[95%] md:w-[90%] pl-7 text-[#555555] h-12 md:h-16 placeholder:text-[#555555] placeholder:pl-6 mb-1 md:mb-2 text-sm md:text-base focus:outline-none focus:border-2 focus:border-[#FC8A06]"
+          placeholder="First Name" id="FirstName" name="firstName">
+        <div class="error-message hidden" id="firstNameError"></div>
+      </div>
 
-    <input type="email"
-      class="bg-white rounded-md w-[95%] md:w-[90%] h-12 md:h-16 pl-7 text-[#555555] placeholder:text-[#555555] placeholder:pl-6 mb-5 md:mb-7 text-sm md:text-base"
-      placeholder="Email" id="Email">
+      <div class="w-full flex flex-col items-center">
+        <input type="text"
+          class="bg-white rounded-md w-[95%] md:w-[90%] h-12 md:h-16 pl-7 text-[#555555] placeholder:text-[#555555] placeholder:pl-6 mb-1 md:mb-2 text-sm md:text-base focus:outline-none focus:border-2 focus:border-[#FC8A06]"
+          placeholder="Last Name" id="LastName" name="lastName">
+        <div class="error-message hidden" id="lastNameError"></div>
+      </div>
 
-    <input type="tel"
-      class="bg-white rounded-md w-[95%] md:w-[90%] h-12 md:h-16 pl-7 text-[#555555] placeholder:text-[#555555] placeholder:pl-6 mb-5 md:mb-7 text-sm md:text-base"
-      placeholder="Phone Number">
+      <div class="w-full flex flex-col items-center">
+        <input type="email"
+          class="bg-white rounded-md w-[95%] md:w-[90%] h-12 md:h-16 pl-7 text-[#555555] placeholder:text-[#555555] placeholder:pl-6 mb-1 md:mb-2 text-sm md:text-base focus:outline-none focus:border-2 focus:border-[#FC8A06]"
+          placeholder="Email" id="Email" name="email">
+        <div class="error-message hidden" id="emailError"></div>
+      </div>
 
-    <div class="flex w-[95%] md:w-[90%] justify-center gap-4 md:gap-9">
-      <input type="date"
-        class="bg-white rounded-md w-[50%] h-12 md:h-16 text-sm md:text-base px-2 pl-7 text-[#555555] placeholder:text-[#555555] placeholder:pl-6"
-        placeholder="Date">
-      <input type="datetime"
-        class="bg-white rounded-md w-[50%] h-12 md:h-16 text-sm md:text-base px-2 pl-7 text-[#555555] placeholder:text-[#555555] placeholder:pl-6"
-        placeholder="Time">
-    </div>
+      <div class="w-full flex flex-col items-center">
+        <input type="tel"
+          class="bg-white rounded-md w-[95%] md:w-[90%] h-12 md:h-16 pl-7 text-[#555555] placeholder:text-[#555555] placeholder:pl-6 mb-1 md:mb-2 text-sm md:text-base focus:outline-none focus:border-2 focus:border-[#FC8A06]"
+          placeholder="Phone Number" id="PhoneNumber" name="phone">
+        <div class="error-message hidden" id="phoneError"></div>
+      </div>
 
-    <!-- Paiement toggle -->
-    <div class="w-full md:w-[50%] flex flex-col justify-center items-center my-5">
-      <p class="pb-4 md:pb-6 text-sm md:text-base">Paiement sera :</p>
-      <div class="relative flex w-full rounded-full h-12 md:h-14 border overflow-hidden p-1">
-        <div id="bg-Paiment"
-          class="absolute top-1 bottom-1 left-1 right-1 h-auto w-[calc(50%-0.25rem)] bg-[#FC8A06] rounded-full "></div>
-        <div id="livraison" class="w-1/2 flex justify-center items-center font-semibold cursor-pointer relative z-10">
-          Livraison</div>
-        <div id="now" class="w-1/2 flex justify-center items-center font-semibold cursor-pointer relative z-10">Now
+      <div class="flex w-[95%] md:w-[90%] justify-center gap-4 md:gap-9 mb-1 md:mb-2">
+        <div class="w-[50%] flex flex-col">
+          <input type="date"
+            class="bg-white rounded-md w-full h-12 md:h-16 text-sm md:text-base px-2 pl-7 text-[#555555] placeholder:text-[#555555] placeholder:pl-6 focus:outline-none focus:border-2 focus:border-[#FC8A06]"
+            id="Date" name="date">
+          <div class="error-message hidden" id="dateError"></div>
+        </div>
+        <div class="w-[50%] flex flex-col">
+          <input type="time"
+            class="bg-white rounded-md w-full h-12 md:h-16 text-sm md:text-base px-2 pl-7 text-[#555555] placeholder:text-[#555555] placeholder:pl-6 focus:outline-none focus:border-2 focus:border-[#FC8A06]"
+            id="Time" name="time">
+          <div class="error-message hidden" id="timeError"></div>
         </div>
       </div>
-    </div>
 
+      <div class="w-full md:w-[50%] flex flex-col justify-center items-center my-5">
+        <p class="pb-4 md:pb-6 text-sm md:text-base">Paiement sera :</p>
+        <div class="relative flex w-full rounded-full h-12 md:h-14 border overflow-hidden p-1">
+          <div id="bg-Paiment"
+            class="absolute top-1 bottom-1 left-1 right-1 h-auto w-[calc(50%-0.25rem)] bg-[#FC8A06] rounded-full "></div>
+          <div id="livraison" class="w-1/2 flex justify-center items-center font-semibold cursor-pointer relative z-10">
+            Livraison</div>
+          <div id="now" class="w-1/2 flex justify-center items-center font-semibold cursor-pointer relative z-10">Now
+          </div>
+        </div>
+      </div>
 
-    <button
-      class="w-[90%] sm:w-[60%] md:w-[50%] bg-[#FC8A06] rounded-2xl h-11 md:h-12 font-bold text-sm md:text-lg hover:text-[#FC8A06] hover:bg-white">Order
-      Now
-    </button>
+      <button type="submit"
+        class="w-[90%] sm:w-[60%] md:w-[50%] bg-[#FC8A06] rounded-2xl h-11 md:h-12 font-bold text-sm md:text-lg hover:text-[#FC8A06] hover:bg-white transition-all">Order
+        Now
+      </button>
+
+    </form>
 
   </section>
   <section id="map"></section>
@@ -126,7 +157,107 @@
   <script type="module" src="../js/fetchComponents.js"></script>
   <script src="../js/paiment.js"></script>
 
-  scr
+  <script>
+   const form = document.getElementById('orderForm');
+    const inputs = {
+      firstName: document.getElementById('FirstName'),
+      lastName: document.getElementById('LastName'),
+      email: document.getElementById('Email'),
+      phone: document.getElementById('PhoneNumber'),
+      date: document.getElementById('Date'),
+      time: document.getElementById('Time'),
+    };
+
+    const errorDivs = {
+      firstName: document.getElementById('firstNameError'),
+      lastName: document.getElementById('lastNameError'),
+      email: document.getElementById('emailError'),
+      phone: document.getElementById('phoneError'),
+      date: document.getElementById('dateError'),
+      time: document.getElementById('timeError'),
+    };
+
+    const validators = {
+      firstName: (value) => {
+        if (!value.trim()) return 'First Name is required';
+        if (!/^[a-zA-Z\s'-]+$/.test(value)) return 'First Name can only contain letters';
+        return '';
+      },
+      lastName: (value) => {
+        if (!value.trim()) return 'Last Name is required';
+        if (!/^[a-zA-Z\s'-]+$/.test(value)) return 'Last Name can only contain letters';
+        return '';
+      },
+      email: (value) => {
+        if (!value.trim()) return 'Email is required';
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return 'Please enter a valid email';
+        return '';
+      },
+      phone: (value) => {
+        if (!value.trim()) return 'Phone Number is required';
+        if (!/^[\d\s\-\+$$$$]+$/.test(value) || value.replace(/\D/g, '').length < 10) 
+          return 'Please enter a valid phone number';
+        return '';
+      },
+      date: (value) => {
+        if (!value) return 'Date is required';
+        const selectedDate = new Date(value);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        if (selectedDate < today) return 'Date cannot be in the past';
+        return '';
+      },
+      time: (value) => {
+        if (inputs.date.value && !value) return 'Time is required when date is selected';
+        return '';
+      },
+    };
+
+    Object.entries(inputs).forEach(([key, input]) => {
+      input.addEventListener('blur', () => validateField(key));
+      input.addEventListener('input', () => {
+        if (errorDivs[key].textContent) validateField(key);
+      });
+    });
+
+    function validateField(fieldName) {
+      const value = inputs[fieldName].value;
+      const error = validators[fieldName](value);
+      
+      if (error) {
+        errorDivs[fieldName].textContent = error;
+        errorDivs[fieldName].classList.remove('hidden');
+        inputs[fieldName].classList.add('input-error');
+        inputs[fieldName].classList.remove('input-valid');
+      } else {
+        errorDivs[fieldName].textContent = '';
+        errorDivs[fieldName].classList.add('hidden');
+        inputs[fieldName].classList.remove('input-error');
+        inputs[fieldName].classList.add('input-valid');
+      }
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      let isValid = true;
+      Object.keys(validators).forEach(fieldName => {
+        validateField(fieldName);
+        if (errorDivs[fieldName].textContent) isValid = false;
+      });
+
+      if (isValid) {
+        console.log('Form is valid! Submitting...');
+        alert('Order submitted successfully!');
+        form.reset();
+        Object.values(inputs).forEach(input => {
+          input.classList.remove('input-valid', 'input-error');
+        });
+      }
+    });
+ 
+  
+  </script>
 </body>
 
 </html>
