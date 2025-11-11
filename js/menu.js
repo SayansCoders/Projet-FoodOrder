@@ -29,6 +29,7 @@ fetch("../data/data.json")
         })
         btnPanier.addEventListener("click" , ()=>{
             let exist = false 
+            //
             listProduit.forEach(p=>{
                 if(p.id === e.id){
                     exist = true
