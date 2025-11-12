@@ -142,7 +142,7 @@ searchFilter.addEventListener('input', (event) => {
     drinks.addEventListener('click',e=>{
             containerCards.innerHTML="";
             data.filter(item=>{
-            if(item.category.toLowerCase().includes(drinks.textContent.toLowerCase())){
+            if(item.category.toLowerCase().includes("Drink".toLowerCase())){
                 let cardS = document.createElement("div")
                 cardS.id = item.id
                 cardS.innerHTML = CardMenu(item)

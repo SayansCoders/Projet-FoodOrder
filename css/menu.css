@@ -13,13 +13,13 @@
 }
 .pagination1{
     color:#860000;
-    background-color: white;
+    background-color: white !important;
 }
 .pagination2{
-    background-color: white;
+    background-color: white !important;
     color: #860000;
 }
 .pagination3{
-    background-color: white;
+    background-color: white !important;
     color: #860000;
 }
