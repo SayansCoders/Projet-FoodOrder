@@ -1,9 +1,9 @@
 export function Navbar(){
     return `<div class="fixed top-0 left-0 w-full h-[100px] z-[9999]">
     <!-- Barre principale -->
-    <div class="flex justify-between items-center h-full px-8 bg-[#101018] text-white">
-      <a href="../index.html"><img class="w-[150px]" src="../assets/images/Nav/logo-nar.png" alt="logo foodorder+"></a>
-      <ul class="hidden md:flex gap-8">
+    <div class="flex justify-between items-center h-full px-8 text-white">
+      <a href="../index.html"><img class="w-[150px]" src="../assets/images/Nav/logo-nar.png" alt="logo foodorder+" class="backdrop-blur-lg rounded-full"></a>
+      <ul class="hidden md:flex gap-8 backdrop-blur-lg rounded-full">
         <li class="hover:bg-[#91011A] px-4 py-2 rounded-[10px] backdrop-blur-lg"><a href="../index.html">Home</a></li>
         <li class="hover:bg-[#91011A] px-4 py-2 rounded-[10px] backdrop-blur-lg"><a href="../Pages/menu.html">Menu</a>
         </li>
@@ -11,7 +11,7 @@ export function Navbar(){
             US</a></li>
       </ul>
 
-      <div class="hidden md:flex relative" role="button" id="btnPanier">
+      <div class="hidden md:flex relative backdrop-blur-lg rounded-full" role="button" id="btnPanier">
         <div class="h-[38px] w-[47px] bg-[#91011A] rounded-[4px]"></div>
         <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
           src="../assets/images/Nav/shopping-cart-icon.svg" alt="cart">
