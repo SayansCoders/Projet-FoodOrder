@@ -34,7 +34,7 @@ fetch("../data/data.json")
             card.innerHTML = CardMenu(data[e])
             let btnPanier = card.querySelector("#btnPanier")
             card.addEventListener("click", () => {
-                window.location.href = `../Pages/details.html?id=${e.id}`;
+                window.location.href = `../Pages/details.html?id=${data[e].id}`;
             })
             btnPanier.addEventListener("click", (event) => {
                 event.stopPropagation()
