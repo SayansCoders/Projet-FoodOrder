@@ -14,7 +14,7 @@ cartProduct.forEach(product=>{
     inject.querySelector('#img-cart').src = product.image
     inject.querySelector('#title').textContent = product.name
     inject.querySelector('#price').textContent = product.price
-    document.querySelector('.totalPanier').textContent = ((parseFloat(document.querySelector('.totalPanier').textContent)+ parseFloat(product.price))).toFixed(2).toString()
+    document.querySelector('.totalPanier').textContent = ((parseFloat(document.querySelector('.totalPanier').textContent)+ ( parseFloat(product.price)*parseFloat(product.quantity)  )   )).toFixed(2).toString()
     inject.querySelector("#qte-text").textContent = product.quantity.toString()
     //event si lutilisateur click sur svg + qte va baisser et aussi pour svg -
 
@@ -75,4 +75,4 @@ cartProduct.forEach(product=>{
 })
 
 ///////////erreur lwl khas xi blan kfch html dyal panier treload onclick
-// khas hta localstorage l qte
+// khas hta localstorage l total
