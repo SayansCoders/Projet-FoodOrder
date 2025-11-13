@@ -24,7 +24,7 @@ updatePlaceholder(phoneMediaQuery);
 phoneMediaQuery.addEventListener('change', updatePlaceholder);
 const container = document.getElementById("menu_container");
 
-let listProduit = JSON.parse(localStorage.getItem("produites")) || [];
+let listProduit = JSON.parse(localStorage.getItem("produits")) || [];
 fetch("../data/data.json")
     .then(res => res.json())
     .then(data => {
