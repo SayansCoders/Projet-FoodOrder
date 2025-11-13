@@ -57,7 +57,9 @@ export function Navbar(){
       class="fixed top-0 right-0 h-full w-[300px] bg-[#181826]/70 backdrop-blur-lg border-l border-white/20 transform translate-x-full transition-transform duration-500 ease-in-out">
 
     </div>
-  </div>`;
+  </div>
+  <div class="h-100"></div>
+  `;
 }
 export function Panier(){
     return ` <div class="w-full max-w-sm bg-[#860000] rounded-lg shadow-2xl h-full relative">
@@ -70,8 +72,9 @@ export function Panier(){
                 <img src="/assets/images/logo-nar.png" alt="logo" class="w-[50%] ml-16">
             </div>
         </div>
-
-        <div id="elemnt-ajouter">
+          <div class=" h-[114px]">
+</div>
+        <div id="elemnt-ajouter" class=" overflow-y-scroll">
         </div>
 
 
@@ -80,14 +83,14 @@ export function Panier(){
             <hr class="w-full border-black">
             <div class="flex justify-between items-center mb-3">
                 <span class="text-white text-sm font-medium">Sub Total:</span>
-                <span class="text-white text-xl font-bold">£127.90</span>
+                <span class="text-white text-xl font-bold totalPanier" >0</span>
             </div>
 
             <!-- Total to Pay Button -->
             <button
                 class="w-full bg-[#fc8906c7] hover:to-yellow-700 text-wh font-bold py-3 rounded-lg mb-2 shadow-lg flex items-center justify-between px-4">
                 <span>Total to pay</span>
-                <span class="text-xl">£127.90</span>
+                <span class="text-xl totalPanier ">0</span>
             </button>
 
             <!-- Checkout Button -->
@@ -96,28 +99,29 @@ export function Panier(){
             </button>
         </div>
     </div>
+        <script  type="module" src="../js/panier.js"></script>
 </div>`
 }
-export function CardMenu(){
+export function CardMenu(produit){
     return `<div
     class="bg-[#222222] rounded-2xl p-4 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 max-w-xs sm:max-w-md md:max-w-lg mx-auto">
     <div class="flex-1 text-center sm:text-left">
         <h2 class="text-white text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3">
-            Pack For Squad
+            ${produit.name}
         </h2>
         <p class="text-gray-300 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
-            1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized French Fries, 3 cold drinks
+            ${produit.description}
         </p>
         <div class="bg-red-600 text-white font-bold px-3 py-2 rounded-lg inline-block text-xs sm:text-sm">
-            40 MAD
+            ${produit.price} MAD
         </div>
     </div>
 
     <div class="relative ">
         <div class="relative w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 rounded-2xl overflow-hidden">
-            <img src="../assets/images/home_img/menu1.jpg" alt="menu" class="w-full h-full object-cover">
+            <img src="${produit.image}" alt="menu" class="w-full h-full object-cover" >
 
-            <button class="absolute bottom-0 right-0 
+            <button id="btnPanier" class="absolute bottom-0 right-0 
                bg-white text-black w-10 h-10 sm:w-12 sm:h-12 
                flex items-center justify-center shadow-lg 
                rounded-tl-2xl rounded-tr-none rounded-bl-none rounded-br-none
@@ -131,7 +135,7 @@ export function CardMenu(){
 </div>`
 }
 export function CardPanier(){
-    return `<div id="cart "  class=" max-w-[350px] px-2 py-2  font-P-SemiBold BGG-red flex justify-between border-b-2 border-b-black border-opacity-60 ">
+    return `<div id="cart" class=" max-w-[350px] px-2 py-2  font-P-SemiBold BGG-red flex justify-between border-b-2 border-b-black border-opacity-60 ">
     <div class="flex items-start gap-2">
     <img id="img-cart" src="../assets/images/card_img/plat_panier.png" class="aspect-square max-w-[60px] " alt="pizza"/>
     <div class="flex flex-col py-2 ">
@@ -139,22 +143,21 @@ export function CardPanier(){
         <span id="price" class="text-yellow-500">£17.90</span>
     </div></div>
 
-
     <div class="flex flex-col gap-1 place-items-center justify-between">
-        <svg width="25" height="31" viewBox="0 0 25 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg id="deleteCartCard" class="cursor-pointer" width="25" height="31" viewBox="0 0 25 31" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M22.5962 3.84615H17.3077V2.88462C17.3077 1.29147 16.0162 0 14.4231 0H10.5769C8.98377 0 7.69231 1.29147 7.69231 2.88462V3.84615H2.40385C1.07626 3.84615 0 4.92242 0 6.25V8.17308C0 8.70415 0.430469 9.13461 0.961538 9.13461H24.0385C24.5695 9.13461 25 8.70415 25 8.17308V6.25C25 4.92242 23.9237 3.84615 22.5962 3.84615ZM9.61538 2.88462C9.61538 2.35457 10.0469 1.92308 10.5769 1.92308H14.4231C14.9531 1.92308 15.3846 2.35457 15.3846 2.88462V3.84615H9.61538V2.88462Z"
                   fill="white"/>
             <path d="M1.82391 11.0566C1.65233 11.0566 1.51561 11.2 1.52379 11.3714L2.31705 28.0206C2.39037 29.5614 3.656 30.7682 5.19806 30.7682H19.8002C21.3423 30.7682 22.6079 29.5614 22.6812 28.0206L23.4745 11.3714C23.4827 11.2 23.346 11.0566 23.1744 11.0566H1.82391ZM16.3453 13.4605C16.3453 12.9292 16.7756 12.4989 17.3068 12.4989C17.8381 12.4989 18.2684 12.9292 18.2684 13.4605V25.9605C18.2684 26.4917 17.8381 26.922 17.3068 26.922C16.7756 26.922 16.3453 26.4917 16.3453 25.9605V13.4605ZM11.5376 13.4605C11.5376 12.9292 11.9679 12.4989 12.4991 12.4989C13.0304 12.4989 13.4607 12.9292 13.4607 13.4605V25.9605C13.4607 26.4917 13.0304 26.922 12.4991 26.922C11.9679 26.922 11.5376 26.4917 11.5376 25.9605V13.4605ZM6.72992 13.4605C6.72992 12.9292 7.1602 12.4989 7.69145 12.4989C8.2227 12.4989 8.65299 12.9292 8.65299 13.4605V25.9605C8.65299 26.4917 8.2227 26.922 7.69145 26.922C7.1602 26.922 6.72992 26.4917 6.72992 25.9605V13.4605Z"
                   fill="white"/>
         </svg>
         <div class=" flex   place-items-center justify-between gap-1">
-            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg id="miniceQte" class="cursor-pointer" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="7.24146" cy="7.24146" r="7.24146" fill="white"/>
                 <line x1="1" y1="-1" x2="7.22201" y2="-1" transform="matrix(-0.999873 -0.0159149 0 -1 11.4629 6.48633)"
                       stroke="#91011A" stroke-width="2" stroke-linecap="round"/>
             </svg>
-            <div class="bg-white px-3 rounded-md mx-auto "><span id="qte-text" class="">1</span></div>
-            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="bg-white text-black px-3 rounded-md mx-auto "><span id="qte-text" class="">1</span></div>
+            <svg id="addQte" class="cursor-pointer" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="7.24146" cy="7.24146" r="7.24146" fill="white"/>
                 <path d="M7.27734 3.37891L7.27734 11.1762" stroke="#91011A" stroke-width="2" stroke-linecap="round"/>
                 <line x1="10.9648" y1="7.14648" x2="3.51947" y2="7.14648" stroke="#91011A" stroke-width="2"
@@ -638,40 +641,42 @@ export function Brands(){
   </style>
 </div>`
 }
-export function CardPaiment(){
+export function CardPaiment(produit){
     return `<div id="CardPaiement"
-    class="grid grid-cols-9 gap-4 items-center bg-[#91011A] w-[100%] rounded-2xl max-w-5xl h-44 p-4 shadow-lg">
+  class="mx-auto grid grid-cols-9 gap-2 items-center bg-[#91011A] w-full rounded-2xl max-w-5xl h-auto p-3 shadow-md overflow-hidden">
 
-    <div class="col-span-2 flex justify-center items-center">
-        <img src="../assets/images/imagesCardPaiment/imgCardPaiment.png" alt="image pizza"
-            class="rounded-full object-cover w-28 h-28 max-sm:w-16 max-sm:h-16 sm:w-32 sm:h-32" id="imgCardPaiement">
+  <div class="col-span-2 flex justify-center items-center">
+    <img src="${produit.image}" alt="image pizza"
+      class="rounded-full object-cover w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28" id="imgCardPaiement">
+  </div>
+
+  <div class="col-span-5 flex flex-col text-white overflow-hidden">
+    <div class="flex items-center mb-2 gap-2 flex-wrap">
+      <h2 class="font-semibold text-sm sm:text-base md:text-lg truncate">${produit.name}</h2>
+      <div class="bg-[#D02A2A] px-2 py-0.5 rounded-md text-xs sm:text-sm">
+        <p class="font-semibold">
+          MAD <span id="prix-initial">${produit.price}</span>
+        </p>
+      </div>
     </div>
 
-    <div class="col-span-5 flex flex-col text-white">
-        <div class="flex  items-center mb-3">
-            <h2 class="font-bold text-xl lg:text-2xl">Margareta</h2>
-            <div class="bg-[#D02A2A] px-3 py-1 rounded-md">
-                <p class="font-semibold">
-                    MAD <span id="prix-initial" class="font-semibold">23.90</span>
-                </p>
-            </div>
-        </div>
+    <p id="description" class="text-[10px] sm:text-xs md:text-sm leading-snug line-clamp-2">
+      ${produit.description}
+    </p>
+  </div>
 
-        <p id="description" class="text-sm lg:text-base leading-snug">1 McChicken™, 1 Big Mac™, 1 RoyalCheeseburger, 3 medium sized French Fries, 3 cold drinks.</p>
-    </div>
+  <div class="col-span-2 flex justify-center items-center gap-2">
+    <!-- Bouton - -->
+      <img src="../assets/images/icon/-icon.svg" class="w-[90px] sm:w-[10px] md:w-[20px]" alt="icon minus">
 
-    <div class="col-span-2 flex justify-center items-center gap-3">
-        <button class="bg-white text-[#91011A] rounded-full flex items-center justify-center shadow hover:bg-gray-200 w-10 h-10 max-sm:w-7 max-sm:h-7">
-            <img src="../assets/images/icon/-icon.svg" class="max-sm:w-3" alt="icon minus">
-        </button>
-        
-        <input type="text" value="1" class="text-center rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#D02A2A]w-12 h-10 max-sm:w-8 max-sm:h-7 max-sm:text-sm">
+      <input type="text" value="1"
+      class="text-center rounded-md border border-gray-300 text-black w-8 sm:w-10 h-7 sm:h-8 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#D02A2A]">
 
-        <button class="bg-white text-[#91011A] rounded-full flex items-center justify-center shadow hover:bg-gray-200w-10 h-10 max-sm:w-7 max-sm:h-7">
-            <img src="../assets/images/icon/+_icon.svg" class="max-sm:w-3" alt="icon plus">
-        </button>
-    </div>
-</div>`
+      <img src="../assets/images/icon/+_icon.svg" class="w-[90px] sm:w-[10px] md:w-[20px]" alt="icon plus">
+  </div>
+</div>
+
+`
 }
 
 
@@ -727,7 +732,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   PanierBtn.addEventListener("click", () => {
-    console.log("🛒 Bouton panier cliqué !");
+    console.log(" Bouton panier cliqué !");
     panierSideBar.classList.remove("translate-x-full");
     cover.classList.remove("hidden");
   });
