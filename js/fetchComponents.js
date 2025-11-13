@@ -72,9 +72,8 @@ export function Panier(){
                 <img src="/assets/images/logo-nar.png" alt="logo" class="w-[50%] ml-16">
             </div>
         </div>
-          <div class=" h-[114px]">
-</div>
-        <div id="elemnt-ajouter" class=" overflow-y-scroll">
+          <div class=" h-[114px]"></div>
+        <div id="elemnt-ajouter" class=" h-20 class="hover:overflow-y-auto">
         </div>
 
 
