@@ -24,7 +24,7 @@ updatePlaceholder(phoneMediaQuery);
 phoneMediaQuery.addEventListener('change', updatePlaceholder);
 const container = document.getElementById("menu_container");
 
-let listProduit = JSON.parse(localStorage.getItem("produites")) || [];
+let listProduit = JSON.parse(localStorage.getItem("produits")) || [];
 fetch("../data/data.json")
     .then(res => res.json())
     .then(data => {
@@ -49,7 +49,7 @@ fetch("../data/data.json")
                     alert("produit deja en panier")
                 } else {
                     listProduit.push(data[e])
-                    localStorage.setItem("produites", JSON.stringify(listProduit))
+                    localStorage.setItem("produits", JSON.stringify(listProduit))
                     alert("produit bien ajouter en panier")
                 }
 
@@ -93,7 +93,7 @@ searchFilter.addEventListener('input', (event) => {
                     alert("produit deja en panier")
                 } else {
                     listProduit.push(e)
-                    localStorage.setItem("produites", JSON.stringify(listProduit))
+                    localStorage.setItem("produits", JSON.stringify(listProduit))
                     alert("produit bien ajouter en panier")
                 }
 
@@ -184,7 +184,7 @@ searchFilter.addEventListener('input', (event) => {
                     alert("produit deja en panier")
                 } else {
                     listProduit.push(e)
-                    localStorage.setItem("produites", JSON.stringify(listProduit))
+                    localStorage.setItem("produits", JSON.stringify(listProduit))
                     alert("produit bien ajouter en panier")
                 }
 
@@ -222,7 +222,7 @@ searchFilter.addEventListener('input', (event) => {
                     alert("produit deja en panier")
                 } else {
                     listProduit.push(e)
-                    localStorage.setItem("produites", JSON.stringify(listProduit))
+                    localStorage.setItem("produits", JSON.stringify(listProduit))
                     alert("produit bien ajouter en panier")
                 }
 
@@ -260,7 +260,7 @@ searchFilter.addEventListener('input', (event) => {
                     alert("produit deja en panier")
                 } else {
                     listProduit.push(e)
-                    localStorage.setItem("produites", JSON.stringify(listProduit))
+                    localStorage.setItem("produits", JSON.stringify(listProduit))
                     alert("produit bien ajouter en panier")
                 }
 
