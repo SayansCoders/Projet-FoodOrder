@@ -77,3 +77,11 @@ function changeQuantity(index, change, quantityInput) {
 
 changeQuantityCard();
 updateTotal();
+
+
+
+//---------------------------------------------
+let currentdate =new Date().toLocaleDateString("fr-FR")
+
+
+ document.getElementById("curr-time-as").textContent = currentdate

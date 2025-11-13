@@ -1,5 +1,5 @@
-export function Navbar(){
-    return `<div class="fixed top-0 left-0 w-full h-[100px] z-[9999]">
+export function Navbar() {
+  return `<div class="fixed top-0 left-0 w-full h-[100px] z-[9999]">
     <!-- Barre principale -->
     <div class="flex justify-between items-center h-full px-8 text-white">
       <a href="../index.html"><img class="w-[200px]" src="../assets/images/Nav/logo-nar.png" alt="logo foodorder+" class="backdrop-blur-lg rounded-full"></a>
@@ -61,8 +61,8 @@ export function Navbar(){
   <div class="h-[100px] bg-[#101018]"></div>
   `;
 }
-export function Panier(){
-    return ` <div class="w-full max-w-sm bg-[#860000] rounded-lg shadow-2xl h-full relative">
+export function Panier() {
+  return ` <div class="w-full max-w-sm bg-[#860000] rounded-lg shadow-2xl h-full relative">
         <!-- Header -->
         <div class="px-4 py-3 rounded-t-lg bg-black absolute top-0">
             <div class="flex items-center">
@@ -101,8 +101,8 @@ export function Panier(){
         <script  type="module" src="../js/panier.js"></script>
 </div>`
 }
-export function CardMenu(produit){
-    return `<div
+export function CardMenu(produit) {
+  return `<div
     class="bg-[#222222] rounded-2xl p-4 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 max-w-xs sm:max-w-md md:max-w-lg mx-auto">
     <div class="flex-1 text-center sm:text-left">
         <h2 class="text-white text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3">
@@ -133,8 +133,8 @@ export function CardMenu(produit){
     </div>
 </div>`
 }
-export function CardPanier(){
-    return `<div id="cart" class=" max-w-[350px] px-2 py-2  font-P-SemiBold BGG-red flex justify-between border-b-2 border-b-black border-opacity-60 ">
+export function CardPanier() {
+  return `<div id="cart" class=" max-w-[350px] px-2 py-2  font-P-SemiBold BGG-red flex justify-between border-b-2 border-b-black border-opacity-60 ">
     <div class="flex items-start gap-2">
     <img id="img-cart" src="../assets/images/card_img/plat_panier.png" class="aspect-square max-w-[60px] " alt="pizza"/>
     <div class="flex flex-col py-2 ">
@@ -166,8 +166,8 @@ export function CardPanier(){
     </div>
 </div>`
 }
-export function Footer(){
-    return `<!DOCTYPE html>
+export function Footer() {
+  return `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -545,9 +545,9 @@ export function Footer(){
 </html>
 `
 }
-export function Map(){
-    return `<div id="cardGoogleMap" class="lg:mx-14 lg:my-8 mx-10 my-7 ">
-    <span id="m-title" class="font-sauce  text-center block lg:text-5xl md:text-4xl">Contact<span class="text-red-700">Us</span></span>
+export function Map() {
+  return `<div id="cardGoogleMap" class="lg:mx-14 lg:my-8 mx-10 my-7 ">
+    <span id="m-title" class="font-sauce  text-center block lg:text-5xl md:text-4xl text-white">Contact<span class="text-red-700">Us</span></span>
 
     <div id="m-mapContainer" class="rounded-2xl overflow-hidden shadow-lg aspect-video md:aspect-video my-6 max-w-1200 mx-auto relative">
         <iframe
@@ -568,8 +568,8 @@ export function Map(){
     </div>
 </div>`
 }
-export function Brands(){
-    return `<div>
+export function Brands() {
+  return `<div>
   <div class="title-similare-reseto text-center m-10">
     <h1 class="font-sauce text-[25px] md:text-5xl text-white">Similare <span class="text-[#91011A]">Resterant</span></h1>
   </div>
@@ -640,8 +640,8 @@ export function Brands(){
   </style>
 </div>`
 }
-export function CardPaiment(produit){
-    return `<div id="CardPaiement"
+export function CardPaiment(produit) {
+  return `<div id="CardPaiement"
   class="mx-auto grid grid-cols-9 gap-2 items-center bg-[#91011A] w-full rounded-2xl max-w-5xl h-auto p-3 shadow-md overflow-hidden">
 
   <div class="col-span-2 flex justify-center items-center">
@@ -668,7 +668,7 @@ export function CardPaiment(produit){
     <!-- Bouton - -->
       <img src="../assets/images/icon/-icon.svg" class="w-[90px] sm:w-[10px] md:w-[20px]" alt="icon minus">
 
-      <input type="text" value="1"
+      <input type="number" value="${produit.quantity}"
       class="text-center rounded-md border border-gray-300 text-black w-8 sm:w-10 h-7 sm:h-8 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#D02A2A]">
 
       <img src="../assets/images/icon/+_icon.svg" class="w-[90px] sm:w-[10px] md:w-[20px]" alt="icon plus">
@@ -689,20 +689,20 @@ export function CardPaiment(produit){
 
 
 
-if(document.getElementById("navbar")!== null){
-    document.getElementById("navbar").innerHTML = Navbar();
+if (document.getElementById("navbar") !== null) {
+  document.getElementById("navbar").innerHTML = Navbar();
 }
-if(document.getElementById("panier")!== null){
-    document.getElementById("panier").innerHTML = Panier();
+if (document.getElementById("panier") !== null) {
+  document.getElementById("panier").innerHTML = Panier();
 }
-if(document.getElementById("footer")!== null){
-    document.getElementById("footer").innerHTML = Footer();
+if (document.getElementById("footer") !== null) {
+  document.getElementById("footer").innerHTML = Footer();
 }
-if(document.getElementById("map")!== null){
-    document.getElementById("map").innerHTML = Map();
+if (document.getElementById("map") !== null) {
+  document.getElementById("map").innerHTML = Map();
 }
-if(document.getElementById("brands")!== null){
-    document.getElementById("brands").innerHTML = Brands();
+if (document.getElementById("brands") !== null) {
+  document.getElementById("brands").innerHTML = Brands();
 }
 
 
