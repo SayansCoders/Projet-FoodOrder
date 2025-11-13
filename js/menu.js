@@ -63,9 +63,42 @@ fetch("../data/data.json")
 fetch("../data/data.json")
     .then(res => res.json())
     .then(data => {
+
+        //had partie d search
 searchFilter.addEventListener('input', (event) => {
-    if(searchFilter.value.lenght==0){
-    containerCards.innerHTML=""
+    if(searchFilter.value.length==0){
+        containerCards.innerHTML=""
+   for(let e=0;e<9;e++){
+
+console.log("mouad")
+
+            let card = document.createElement("div")
+            card.id = data[e].id
+            card.innerHTML = CardMenu(data[e])
+            let btnPanier = card.querySelector("#btnPanier")
+            card.addEventListener("click", () => {
+                window.location.href = `../Pages/details.html?id=${e.id}`;
+            })
+            btnPanier.addEventListener("click", (event) => {
+                event.stopPropagation()
+                let exist = false
+                //
+                listProduit.forEach(p => {
+                    if (p.id === data[e].id) {
+                        exist = true
+                    }
+                })
+                if (exist) {
+                    alert("produit deja en panier")
+                } else {
+                    listProduit.push(data[e])
+                    localStorage.setItem("produites", JSON.stringify(listProduit))
+                    alert("produit bien ajouter en panier")
+                }
+
+            })
+            container.append(card)
+        }
     }
     containerCards.innerHTML=""
     const valueSearch = searchFilter.value
