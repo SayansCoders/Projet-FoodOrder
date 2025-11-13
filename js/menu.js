@@ -99,6 +99,7 @@ fetch("../data/data.json")
                     container.append(card)
                 }
             }
+            else{
             containerCards.innerHTML = ""
             const valueSearch = searchFilter.value
 
@@ -140,7 +141,7 @@ fetch("../data/data.json")
                 }
 
 
-            })
+            })}
         })
 
 
