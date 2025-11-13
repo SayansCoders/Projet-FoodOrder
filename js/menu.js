@@ -63,6 +63,7 @@ fetch("../data/data.json")
                     } else {
                         listProduit.push(data[e])
                         localStorage.setItem("produits", JSON.stringify(listProduit))
+                        location.reload()
                         alert("produit bien ajouter en panier")
                     }
 
@@ -222,6 +223,7 @@ fetch("../data/data.json")
                             } else {
                                 listProduit.push(item)
                                 localStorage.setItem("produits", JSON.stringify(listProduit))
+                                location.reload()
                                 alert("produit bien ajouter en panier")
                             }
 
@@ -273,6 +275,7 @@ fetch("../data/data.json")
                             } else {
                                 listProduit.push(item)
                                 localStorage.setItem("produits", JSON.stringify(listProduit))
+                                location.reload()
                                 alert("produit bien ajouter en panier")
                             }
 
@@ -324,6 +327,7 @@ fetch("../data/data.json")
                             } else {
                                 listProduit.push(item)
                                 localStorage.setItem("produits", JSON.stringify(listProduit))
+                                location.reload()
                                 alert("produit bien ajouter en panier")
                             }
 
@@ -377,6 +381,7 @@ fetch("../data/data.json")
                         } else {
                             listProduit.push(data[j])
                             localStorage.setItem("produits", JSON.stringify(listProduit))
+                            location.reload()
                             alert("produit bien ajouter en panier")
                         }
 
@@ -427,6 +432,7 @@ fetch("../data/data.json")
                         } else {
                             listProduit.push(data[i])
                             localStorage.setItem("produits", JSON.stringify(listProduit))
+                            location.reload()
                             alert("produit bien ajouter en panier")
                         }
 
@@ -477,6 +483,7 @@ fetch("../data/data.json")
                         } else {
                             listProduit.push(data[i])
                             localStorage.setItem("produits", JSON.stringify(listProduit))
+                            location.reload()
                             alert("produit bien ajouter en panier")
                         }
 

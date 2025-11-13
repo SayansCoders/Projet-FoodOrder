@@ -76,7 +76,7 @@
         </div>
       </div>
 
-      <!-- Quantity & total -->
+      <!-- Quantity and total -->
       <div class="price-btn-and-total flex flex-col sm:flex-row justify-between items-center gap-5 mt-10">
         <!-- Quantity buttons -->
         <div class="btn-how-much flex gap-3">
@@ -99,7 +99,7 @@
           </div>
 
           <div class="btn-add-to-card flex bg-[#FC8A06] w-full sm:w-[250px] h-14 sm:h-16 p-2 justify-center items-center rounded-lg cursor-pointer hover:bg-[#BC6F05] gap-2">
-            <h1 class="text-[16px] sm:text-[20px] font-bold">ADD TO CART</h1>
+            <h1 class="text-[16px] sm:text-[20px] font-bold"><a href="/Pages/paiment.html">ADD TO CART</a></h1>
             <img src="/assets/images/details-image/shopping-cart.png" alt="shopping-cart" class="w-6 sm:w-8">
           </div>
         </div>
@@ -107,12 +107,18 @@
     </div>
   </div>
 </section>
-<section id="SimilarFood"></section>
+<section id="foodSimilar">
+  <div class="title flex text-center justify-center text-3xl m-10 md:text-center md:text-6xl font-myfont">
+    <h1 class="text-[#91011A]">Similar <span class="text-white">Food</span></h1>
+  </div>
+
+  <div id="SimilarFood" class="grid grid-cols-1 gap-5 m-6 md:grid-cols-3"></div>
+</section>
 
 <section id="brands"></section>
 <footer id="footer"></footer>
 
 </body>
-<script src="../js/details.js"></script>
+<script type="module" src="../js/details.js"></script>
 <script type="module" src="../js/fetchComponents.js"></script>
 </html>

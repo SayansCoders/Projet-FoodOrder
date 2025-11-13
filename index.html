@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- <CHANGE> Added GSAP library for animation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
       body {
@@ -95,6 +94,15 @@
         </div>
       </section>
 
+      <!-- <section class="relative mb-12 sm:mb-16 px-4 sm:px-8 lg:px-14">
+        <h1 class="text-white text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12">
+          Full <span class="text-[#860000]">Menu</span>
+        </h1>
+            
+        <div id="menu_container" class="grid grid-cols- md:grid-cols- lg:grid-cols- gap-6">
+        </div>
+      </section> -->
+
       <section class="relative min-h-[400px] sm:min-h-[500px] bg-[#3B0809] overflow-hidden mt-12 sm:mt-16 mb-12 sm:mb-16">
         <div class="container mx-auto px-4 sm:px-8 py-12 sm:py-16 grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
           <div class="relative order-2 md:order-1">
@@ -160,7 +168,7 @@
         </div>
       </section>
 
-      <section class="relative w-full min-h-screen overflow-hidden py-12 sm:py-16 lg:py-24">
+      <section class="relative w-full min-h-screen overflow-hidden py-12 sm:py-16 lg:py-4">
         <div class="container mx-auto px-4 sm:px-8">
           <div class="grid md:grid-cols-2 gap-8 items-center">
             <div class="order-2 md:order-1">
@@ -176,7 +184,7 @@
                 <h1 class="text-6xl sm:text-6xl md:text-7xl lg:text-9xl font-black text-yellow-400 leading-none mb-4 transform -rotate-3">
                   Order
                 </h1>
-                <h1 class="text-6xl sm:text-6xl md:text-7xl lg:text-9xl font-black text-yellow-500 leading-none transform rotate-2">
+                <h1 class="text-6xl sm:text-6xl md:text-7xl lg:text-9xl font-black text-yellow-500 leading-none transform -rotate-2">
                   now
                 </h1>
               </div>
@@ -281,7 +289,8 @@
 
     </footer>
     <script type="module" src="./js/fetchComponents.js"></script>
-    <script src="/js/index.js"></script>
+    <script type="module" src="../js/panier.js" ></script>
+    <script src="/js/index.js"></script> 
    
   </body>
 </html>

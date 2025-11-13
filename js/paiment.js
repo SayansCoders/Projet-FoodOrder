@@ -43,7 +43,7 @@ function updateTotal() {
 }
 
 
-function initQuantityEvents() {
+function changeQuantityCard() {
     const cards = document.querySelectorAll("#CardPaiement");
 
     cards.forEach((card, index) => {
@@ -75,5 +75,13 @@ function changeQuantity(index, change, quantityInput) {
 }
 
 
-initQuantityEvents();
+changeQuantityCard();
 updateTotal();
+
+
+
+//---------------------------------------------
+let currentdate =new Date().toLocaleDateString("fr-FR")
+
+
+ document.getElementById("curr-time-as").textContent = currentdate
