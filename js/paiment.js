@@ -43,7 +43,7 @@ function updateTotal() {
 }
 
 
-function initQuantityEvents() {
+function changeQuantityCard() {
     const cards = document.querySelectorAll("#CardPaiement");
 
     cards.forEach((card, index) => {
@@ -75,5 +75,5 @@ function changeQuantity(index, change, quantityInput) {
 }
 
 
-initQuantityEvents();
+changeQuantityCard();
 updateTotal();
